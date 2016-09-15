@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon Sep 12 15:20:51 CEST 2016
+markTmpDer=true
+builderNum=7
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=derive_practices.tex
+outputFile=derive_practices.pdf
+langSpell=en
+markDer=true
+srcDir=

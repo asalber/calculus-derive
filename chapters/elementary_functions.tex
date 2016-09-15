@@ -1,0 +1,323 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\chapter{Elementary functions}
+
+% \section{Fundamentos teóricos}
+% 
+% En esta práctica se introducen los conceptos básicos sobre funciones reales de variable real, esto es, funciones
+% \[f:\mathbb{R}\rightarrow \mathbb{R}.\]
+% 
+% \subsection{Dominio e imagen}
+% 
+% El \emph{Dominio} de la función $f$ es el conjunto de los números
+% reales $x$ para los que existe $f(x)$ y se designa mediante $\dom
+% f$.
+% 
+% La \emph{Imagen} de $f$ es el conjunto de los números reales $y$ para los que existe algún $x\in \mathbb{R}$ tal que $f(x)=y$, y se denota por $\im f$.
+% 
+% 
+% \subsection{Signo y crecimiento}
+% El \emph{signo} de la función es positivo $(+)$ en los valores de $x$ para los que $f(x)>0$ y negativo $(-)$ en los que $f(x)<0$. Los valores de $x$ en los que la función se anula se conocen como \emph{raíces} de la función.
+% 
+% Una función $f(x)$ es \emph{creciente} en un intervalo $I$ si $\forall\, x_1, x_2 \in I$ tales que $x_1<x_2$ se verifica que $f(x_1)\leq f(x_2)$.
+% 
+% Del mismo modo, se dice que una función $f(x)$ es \emph{decreciente} en un intervalo $I$ si $\forall\, x_1, x_2 \in I$ tales que $x_1<x_2$ se verifica que $f(x_1)\geq f(x_2)$. En la figura~\ref{g:crecimiento} se muestran estos conceptos.
+% 
+% \begin{figure}[h!]
+% \centering \subfigure[Función creciente.] {\label{g:funcion_creciente}
+% \scalebox{1}{\input{img/funciones_elementales/funcion_creciente}}}\qquad
+% \subfigure[Función decreciente.]{\label{g:funcion_decreciente}
+% \scalebox{1}{\input{img/funciones_elementales/funcion_decreciente}}}
+% \caption{Crecimiento de una función.}
+% \label{g:crecimiento}
+% \end{figure}
+% 
+% 
+% \subsection{Extremos Relativos}
+% Una función $f(x)$ tiene un \emph{máximo relativo} en $x_0$ si existe un entorno $A$ de $x_0$ tal que $\forall x \in A$
+% se verifica que $f(x)\leq f(x_0)$.
+% 
+% Una función $f(x)$ tiene un \emph{mínimo relativo} en $x_0$ si existe un entorno $A$ de $x_0$ tal que $\forall x\in A$
+% se verifica que $f(x)\geq f(x_0)$.
+% 
+% Diremos que la función $f(x)$ tiene un \emph{extremo relativo} en un punto si tiene un \emph{máximo o mínimo relativo}
+% en dicho punto. Estos conceptos se muestran en la figura~\ref{g:extremos}.
+% 
+% \begin{figure}[h!]
+% \centering \subfigure[Máximo relativo.] {\label{g:maximo}
+% \scalebox{1}{\input{img/funciones_elementales/maximo}}}\qquad
+% \subfigure[Mínimo relativo.]{\label{g:minimo}
+% \scalebox{1}{\input{img/funciones_elementales/minimo}}}
+% \caption{Extremos relativos de una función.}
+% \label{g:extremos}
+% \end{figure}
+% 
+% Una función $f(x)$ está \emph{acotada superiormente} si $\exists K\in\mathbb{R}$ tal que $f(x)\leq K$ $\forall x \in \dom f$. Análogamente, se dice que una función $f(x)$ está \emph{acotada inferiormente} si $\exists K\in\mathbb{R}$ tal que $f(x)\geq K$ $\forall x \in \dom f$.
+% 
+% Una función $f(x)$ está \emph{acotada} si lo está superior e inferiormente, es decir si $\exists K\in\mathbb{R}$ tal que $|f(x)|\leq K$ $\forall x \in \dom f$.
+% 
+% 
+% \subsection{Concavidad}
+% 
+% De forma intuitiva se puede decir que una función $f(x)$ es \emph{cóncava} en un intervalo $I$ si $\forall\, x_1, x_2
+% \in I$, el segmento de extremos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ queda por encima de la gráfica de $f$.
+% 
+% Análogamente se dirá que es \emph{convexa} si el segmento anterior queda por debajo de la gráfica de $f$.
+% 
+% Diremos que la función $f(x)$ tiene un \emph{punto de inflexión} en $x_0$ si en ese punto la función pasa de cóncava a
+% convexa o de convexa a cóncava. Estos conceptos se ilustran en la figura~\ref{g:concavidad}.
+% 
+% \begin{figure}[h!]
+% \centering \subfigure[Función cóncava.] {\label{g:funcion_concava_arriba}
+% \scalebox{1}{\input{img/funciones_elementales/funcion_concava_arriba}}}\qquad
+% \subfigure[Función convexa.]{\label{g:funcion_concava_abajo}
+% \scalebox{1}{\input{img/funciones_elementales/funcion_concava_abajo}}}
+% \caption{Concavidad de una función.}
+% \label{g:concavidad}
+% \end{figure}
+% 
+% \subsection{Asíntotas}
+% 
+% La recta $x=a$ es una \emph{asíntota vertical} de la función $f(x)$ si al menos uno de los límites laterales de $f(x)$ cuando $x$ tiende hacia $a$ es $+\infty$ o $-\infty$, es decir cuando se verifique alguna de las siguientes igualdades
+% \[
+% \ \lim_{x\rightarrow a^{+}}f(x)=\pm\infty   \quad \textrm{o} \quad
+% \lim_{x\rightarrow a^{-}}f(x)=\pm\infty
+% \]
+% 
+% La recta $y=b$ es una \emph{asíntota horizontal} de la función $f(x)$ si alguno de los límites de $f(x)$ cuando $x$ tiende hacia $+\infty$ o $-\infty$ es igual a $b$, es decir cuando se verifique
+% \[
+% \ \lim_{x\rightarrow -\infty }f(x)=b    \quad \textrm{o} \quad
+% \ \lim_{x\rightarrow +\infty }f(x)=b
+% \]
+% 
+% La recta $y=mx+n$ es una \emph{asíntota oblicua} de la función $f(x)$ si alguno de los límites de $f(x)-(mx+n)$ cuando $x$ tiende hacia $+\infty$ o $-\infty$ es igual a 0, es decir si
+% 
+% \[
+% \ \lim_{x\rightarrow -\infty }{(f(x)-mx)}=n    \quad \textrm{o} \quad
+% \ \lim_{x\rightarrow +\infty }{(f(x)-mx)}=n
+% \]
+% 
+% En la figura~\ref{g:asintotas} se muestran los distintos tipos de asíntotas.
+% 
+% \begin{figure}[h!]
+% \centering \subfigure[Asíntota horizontal y vertical.] {\label{g:asintotahorizontalyvertical}
+% \scalebox{1}{\input{img/funciones_elementales/asintota_vertical_horizontal}}}\qquad\qquad
+% \subfigure[Asíntota vertical y oblicua.]{\label{g:asintotaoblicua}
+% \scalebox{1}{\input{img/funciones_elementales/asintota_oblicua}}}
+% \caption{Tipos de asíntotas de una función.}
+% \label{g:asintotas}
+% \end{figure}
+% 
+% 
+% \subsection{Periodicidad}
+% Una función $f(x)$ es \emph{periódica} si existe $h\in\mathbb{R^{+}}$ tal que \[f(x+h)=f(x)\  \forall x\in \dom f\] siendo el período $T$ de la función, el menor valor $h$ que verifique la igualdad anterior.
+% 
+% En una función periódica, por ejemplo $f(x)=A\sin(wt)$, se denomina \emph{amplitud} al valor de $A$, y es la mitad de la diferencia entre los valores máximos y mínimos de la función. En la figura~\ref{g:periodoyamplitud} se ilustran estos conceptos.
+% 
+% \begin{figure}[h!]
+% \centering
+% \scalebox{0.8}{\input{img/funciones_elementales/funcion_periodica}}
+% \caption{Periodo y amplitud de una función periódica.}
+% \label{g:periodoyamplitud}
+% \end{figure}
+% 
+% \clearpage
+% \newpage
+
+\section{Solved exercises}
+
+\begin{enumerate}[leftmargin=*]
+\item Consider the function
+\[
+f(t)=\frac{t^4+19t^2-5}{t^4+9t^2-10}.
+\]
+ 
+\begin{enumerate}
+\item Plot the graph of the function. 
+\begin{indication}
+\begin{enumerate}
+\item Enter the expression of the function and select it. 
+\item Select the menu \menu{Window > New 2D-plot Window}.
+\item In the graphic window click the button \button{Plot}.
+\end{enumerate}
+\end{indication}
+
+\item Looking at the graph of the function determine:
+\begin{enumerate}
+\item Domain.
+\begin{indication}
+Look at the values of $x$ where the function does exists, that is, where there is graph.
+\end{indication}
+
+\item  Image.
+\begin{indication}
+Look at the values of $y$ that are output of the function, that is, where there is graph. 
+\end{indication}
+
+\item  Asymptotes.
+\begin{indication}
+Look at the lines (horizontal, vertical or oblique) where the graph approaches (the distance between the graph and the line tends to zero as they tend to infinity).
+\end{indication}
+
+\item  Zeros.
+\begin{indication}
+Look at the values of $x$  where the graph cuts the horizontal axis. 
+\end{indication}
+
+\item Sign.
+\begin{indication}
+Look at the values of $x$ where the graph is over the horizontal axis (positive) and where it is under the horizontal axis (negative).
+\end{indication}
+
+\item Continuity
+\begin{indication}
+Look at the values of $x$ where you can trace the graph without lifting your hand. 
+\end{indication}
+
+\item Increasing and decreasing.
+\begin{indication}
+Look at the values of $x$ where $y$ increases when $x$ increases (increasing) and the values where $y$ decreases when $x$ increases (decreasing).
+\end{indication}
+
+\item Concavity
+\begin{indication}
+Look at the values of $x$ where the curvature of the graph is up $\cup$ (concave up or convex) and where the curvature is down $\cap$ (concave down or simply concave).
+\end{indication}
+
+\item Relative extrema.
+\begin{indication}
+Look at the values of $x$ where the graph has a peak (relative maximum) and where the graph has a valley (relative minimum).
+\end{indication}
+
+\item Inflection points.
+\begin{indication}
+Look at the values of $x$ where the curvature changes continuously. 
+\end{indication}
+\end{enumerate}
+\end{enumerate}
+
+
+\item Plot in the same graphic window the graphs of the functions $2^x$, $e^x$, $0.7^x$, $0.5^x$. 
+Looking at the graphs of the functions, determine which ones are increasing and which ones are decreasing. 
+
+\begin{indication}
+Open a new graphic window with the menu \menu{Window > New 2d-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time. 
+
+For every function repeat the following steps:
+\begin{enumerate}
+\item Enter the expression of the function in the Algebra window and select it. 
+\item Click the button \button{Plot} in the graphic window.
+\item Click at some point near the graph and select the menu \menu{Insert > Annotation}. 
+In the dialog shown enter the name of the function and click the button \button{OK}.
+\end{enumerate}
+\end{indication}
+
+Can you deduce for what values of $a$ the function $a^x$ is increasing and for what values it is decreasing?
+
+
+\item Plot in the same graphic window the graphs of the following functions and determine their periods and amplitudes. 
+\begin{enumerate}
+\item $\sin(x)$, $\sin(x)+2$, $\sin(x+2)$.
+\item $\sin(2x)$, $2\sin(x)$, $\sin(x/2)$.
+\begin{indication}
+Open a new graphic window with the menu \menu{Window > New 2d-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time. 
+For every function repeat the following steps:
+\begin{enumerate}
+\item Enter the expression of the function in the Algebra window and select it. 
+\item Click the button \button{Plot} in the graphic window.
+\item Click at some point near the graph and select the menu \menu{Insert > Annotation}. 
+In the dialog shown enter the name of the function and click the button \button{OK}.
+\end{enumerate}
+For the period look at the length of the smaller interval in the horizontal axis where the graph is repeated. 
+
+For the amplitude look at the distance between the maximum and the minimum and divide it by two.
+\end{indication}
+\end{enumerate}
+
+
+\item Plot the piecewise function 
+\[
+f(x)=
+\begin{cases}
+-2x & \mbox{if $x\leq0$;} \\
+x^2 & \mbox{if $x>0$.}
+\end{cases}
+\]
+
+\begin{indication}
+To represent a piecewise function Derive uses the function \command{CHI}.
+The syntax for this function is \command{CHI(a,x,b)}, where \command{a} and \command{b} are the lower and upper limits where a subfunction is defined and \command{x} is the variable of the function. 
+This defines the function 
+\[
+\operatorname{CHI} (a,x,b) = 
+\begin{cases}
+0 & \mbox{if $x<a$} \\
+1 & \mbox{if $a\leq x \leq b$} \\
+0 & \mbox{if $x>b$}
+ \end{cases}
+\]
+
+According to this, to enter the piecewise function we have to write  
+\[
+\command{-2x CHI(-inf,x,0) + x\^{}2 CHI(0,x,inf)}
+\]
+\end{indication}
+\end{enumerate}
+
+
+\section{Proposed exercises}
+\begin{enumerate}[leftmargin=*]
+\item Plot the graphs of the following functions and determine their domains looking at their graphs.  
+
+\begin{enumerate}
+\item $f(x)=\dfrac{x^2+x+1}{x^3-x}$
+\item $g(x)=\sqrt{x^4-1}$.
+\item $h(x)=\cos\left(\frac{x+3}{x^2+1}\right)$.
+\item $l(x)=\arcsin\left(\frac{x}{1+x}\right)$.
+\end{enumerate}
+
+\item Consider the function
+\[
+f(x)=\frac{x^3+x+2}{5x^3-9x^2-4x+4}.
+\]
+
+Plot the function and determine looking at its graph:
+\begin{enumerate}
+\item Domain
+\item Image
+\item Asymptotes
+\item Zeros
+\item Sign
+\item Continuity
+\item Increasing and decreasing
+\item Concavity
+\item Relative extrema
+\item Inflection points
+\end{enumerate}
+
+\item Plot in the same graphic window the graphs of the functions $\log_{10}x$, $\log_{2}x$, $\log x$, $\log_{0.5}x$.
+\begin{enumerate}
+\item Looking at their graphs determine which funtions are increasing and which ones are decreasing.
+\item Deduce for what values of $a$ the function $\log_ax$ is increasing and for what values it is decreasing?
+\end{enumerate}
+
+\item Plot the following functions and complete the following sentences with the word equal or the number of times that is lower or greater in any case.
+\begin{enumerate}
+\item The function $\cos(2x)$ has a period ............ than the function $\cos{x}$.
+\item The function $\cos(2x)$ has an amplitude ............ than the function $\cos{x}$.
+\item The function $\cos(x/2)$ has period ............ than the function $\cos(3x)$.
+\item The function $\cos(x/2)$ has an amplitude ............ than the function $\cos(3x)$.
+\item The function $3\cos(2x)$ has a period ............ than the function $\cos(x/2)$.
+\item The function $3\cos(2x)$ has an amplitude ............ than the function $\cos(x/2)$.
+\end{enumerate}
+
+\item Find the solutions of the equation $e^{-1/x}=\dfrac{1}{x}$  graphically.
+
+\item Plot the graph of the function
+\[
+f(x)=
+\begin{cases}
+x^3 & \mbox{if $x<0$} \\
+e^x-1 & \mbox{if $x\geq0$}
+\end{cases}
+\]
+\end{enumerate}
