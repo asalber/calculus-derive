@@ -7,38 +7,38 @@
 % multitud de aplicaciones. En esta práctica introducimos este
 % concepto y presentamos algunas de sus aplicaciones, tanto en
 % funciones de una como de varias variables.
-% 
+%
 % \subsection{Tasas de variación media e instantánea. La derivada}
 % Cuando queremos conocer la variación que experimenta una función
 % real $f(x)$ en un intervalo $[a,b]$, se calcula la diferencia
 % $f(b)-f(a)$ que se conoce como \emph{incremento} de $f$, y se nota
 % $\Delta f[a,b]$, aunque, a veces, simplemente se escribe $\Delta f$.
-% 
+%
 % En muchas otras ocasiones veces resulta importante comparar la
 % variación que experimenta la función $f$ con relación a la variación
 % que experimenta su argumento $x$ en un intervalo $[a,b]$. Si tenemos
 % en cuenta que $b=a+\Delta x$, esto viene dado por la \emph{tasa de
 % variación media}, que se define como:
-% 
+%
 % \[
 % \textrm{TVM} f[a,b]=\textrm{TVM} f[a,a+\Delta x]=\frac{\Delta
 % f}{\Delta x}=\frac{f(b)-f(a)}{b-a}=\frac{f(a+\Delta x )-f(a)}{\Delta
 % x}.
 % \]
-% 
+%
 % También resulta muy común llamar a $\Delta x$ con la letra $h$, por
 % lo que la expresión anterior queda de la forma:
-% 
+%
 % \[
 % \textrm{TVM} f[a,b]=\textrm{TVM} f[a,a+h]=\frac{\Delta f}{\Delta
 % x}=\frac{f(a+h)-f(a)}{h}.
 % \]
-% 
+%
 % Desde el punto de vista geométrico, la tasa de variación media de
 % $f$ en el intervalo $[a , a+\Delta x]$ es la pendiente de la recta
 % secante a $f$ en los puntos $(a , f(a))$ y $(a+\Delta x, f(a+\Delta
 % x))$, tal y como se muestra en la figura~\ref{g:secante}.
-% 
+%
 % \begin{figure}[h!]
 % \begin{center}
 % \scalebox{1}{\input{img/derivadas/secante}}
@@ -46,8 +46,8 @@
 % secante a una función en dos puntos.} \label{g:secante}
 % \end{center}
 % \end{figure}
-% 
-% 
+%
+%
 % Y, a veces, incluso más importante que la tasa de variación media,
 % es estudiar la tasa de variación que experimenta la función, no en
 % un intervalo, sino en un punto, tomando para ello límites cuando el
@@ -58,20 +58,20 @@
 % recibe el nombre de \emph{derivada} de la función real $f(x)$ en un
 % punto $a\in \mathbb{R}$, y se nota como $f'(a)$, o bien
 % $\dfrac{df}{dx}(a)$:
-% 
+%
 % \[
 % f'(a)=\dfrac{df}{dx}(a)= \lim_{\Delta x\rightarrow 0}\frac{\Delta
 % f}{\Delta x}=\lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta
 % x)-f(a)}{\Delta x}=\lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}.
 % \]
-% 
+%
 % Cuando este límite existe, se dice que la función $f$ es
 % \emph{derivable} o \emph{diferenciable} en el punto $a$.
-% 
+%
 % Geométricamente, $f'(a)$ es la pendiente de la recta tangente a la
 % curva de $f(x)$ en el punto $(a,f(a))$, tal y como se aprecia en la
 % figura~\ref{g:tangente}.
-% 
+%
 % \begin{figure}[h!]
 % \begin{center}
 % \scalebox{1}{\input{img/derivadas/tangente}}
@@ -79,28 +79,28 @@
 % función en un punto.} \label{g:tangente}
 % \end{center}
 % \end{figure}
-% 
+%
 % \subsubsection*{Recta tangente y normal a una función en un punto}
 % De la gráfica anterior, fácilmente se deduce que la ecuación de la
 % recta tangente a una función $f(x)$ en el punto $(a,f(a))$ es:
 % \[
 % y=f(a)+f'(a)(x-a).
 % \]
-% 
+%
 % Y teniendo en cuenta que la pendiente de la recta normal (recta
 % perpendicular a la recta tangente) es la inversa cambiada de signo,
 % la ecuación de la recta normal a $f(x)$ en el punto $(a,f(a))$ es:
 % \[
 % y=f(a)-\frac{1}{f'(a)}(x-a).
 % \]
-% 
+%
 % \subsection{Función derivada y derivadas sucesivas}
-% 
+%
 % El límite que nos sirve para calcular la derivada de una función en
 % un punto, define una nueva función $f'$ cuyo dominio está formado
 % por los puntos en los que $f$ es diferenciable. La función $f'(x)$,
 % o también $\dfrac{df}{dx}$, se llama \emph{primera derivada} de $f$.
-% 
+%
 % Puesto que $f'$ es una función, puede derivarse a su vez, y la
 % primera derivada de $f'$ se conoce como segunda derivada de $f$, y
 % se nota $f''(x)$ o $\dfrac{d^2f}{dx^2}$. Análogamente, la
@@ -111,18 +111,18 @@
 % \frac{d^nf}{dx^n}=\frac{d}{dx}\left(\frac{d^{n-1}f}{dx^{n-1}}\right)\
 % n=2,3,\ldots
 % \]
-% 
-% 
+%
+%
 % \subsection{Estudio del crecimiento de una función}
 % Una función $f(x)$ es \emph{creciente} en un intervalo $I$ si
 % $\forall\, x_1, x_2 \in I$ tales que $x_1<x_2$ se verifica que
 % $f(x_1)\leq f(x_2)$.
-% 
+%
 % Del mismo modo, se dice que una función $f(x)$ es \emph{decreciente}
 % en un intervalo $I$ si $\forall\, x_1, x_2 \in I$ tales que
 % $x_1<x_2$ se verifica que $f(x_1)\geq f(x_2)$. En la
 % figura~\ref{g:crecimiento_derivada} se muestran estos conceptos.
-% 
+%
 % \begin{figure}[h!]
 % \centering \subfigure[Función creciente.] {\label{g:funcion_creciente}
 % \scalebox{1}{\input{img/funciones_elementales/funcion_creciente}}}\qquad
@@ -131,7 +131,7 @@
 % \caption{Crecimiento de una función.}
 % \label{g:crecimiento_derivada}
 % \end{figure}
-% 
+%
 % Si $f$ es una función derivable en el intervalo $I$, el signo de la
 % derivada puede utilizarse para estudiar el crecimiento de la función
 % ya que se cumple:
@@ -139,32 +139,32 @@
 % \item $f$ es creciente en $x_0\in I$, si y sólo si, $f'(x_0)\geq 0$.
 % \item $f$ es decreciente en $x_0\in I$, si y sólo si, $f'(x_0)\leq 0$.
 % \end{itemize}
-% 
+%
 % Desde el punto de vista geométrico, esto es evidente, ya en los
 % intervalos donde $f$ es creciente, cualquier recta tangente tiene
 % pendiente positiva, mientras que en los intervalos donde $f$ es
 % decreciente, las tangentes tienen pendiente negativa, tal y como se
 % observa en la figura~\ref{g:crecimiento_derivada}.
-% 
+%
 % \subsection{Determinación de los extremos relativos}
 % Una función $f(x)$ tiene un \emph{máximo relativo} en $x_0$ si
 % existe un entorno $A$ de $x_0$ tal que $\forall x \in A$ se verifica
 % que $f(x)\leq f(x_0)$.
-% 
+%
 % Una función $f(x)$ tiene un \emph{mínimo relativo} en $x_0$ si
 % existe un entorno $A$ de $x_0$ tal que $\forall x\in A$ se verifica
 % que $f(x)\geq f(x_0)$.
-% 
+%
 % Diremos que la función $f(x)$ tiene un \emph{extremo relativo} en un
 % punto si tiene un \emph{máximo o mínimo relativo} en dicho punto.
-% 
+%
 % Cuando $f$ es una función continua, entonces también se puede
 % definir un extremo relativo como aquel punto donde cambia el
 % crecimiento de la función. Así, un máximo relativo es un punto donde
 % la función pasa de ser creciente a ser decreciente, y un mínimo
 % relativo es un punto donde la función pasa de ser decreciente a ser
 % creciente, tal y como se muestra en la figura~\ref{g:extremos_derivada}.
-% 
+%
 % \begin{figure}[h!]
 % \centering \subfigure[Máximo relativo.] {\label{g:maximo}
 % \scalebox{1}{\input{img/funciones_elementales/maximo}}}\qquad
@@ -173,7 +173,7 @@
 % \caption{Extremos relativos de una función.}
 % \label{g:extremos_derivada}
 % \end{figure}
-% 
+%
 % Si $f$ tiene un extremo relativo en un punto $x_0$ y existe la
 % derivada en dicho punto, entonces se cumple que $f'(x_0)=0$, es
 % decir, la tangente a la gráfica de $f$ en dicho punto es horizontal
@@ -190,26 +190,26 @@
 % sección anterior. Resumiendo, si $f'(x_0)=0$, entonces:
 % \begin{itemize}
 % \item Si existe un $\delta>0$ tal que $f'(x)>0\ \forall\, x\in (x_0-\delta,x_0)$ (derivada positiva a la izquierda de $x_0$) y $f'(x)<0\ \forall\, x\in (x_0,x_0+\delta)$ (derivada negativa a la derecha de $x_0$), $x_0$ es un máximo relativo.
-% 
+%
 % \item Si existe un $\delta>0$ tal que $f'(x)<0\ \forall\, x\in (x_0-\delta,x_0)$ (derivada negativa a la izquierda de $x_0$) y $f'(x)>0\ \forall\, x\in (x_0,x_0+\delta)$ (derivada positiva a la derecha de $x_0$), $x_0$ es un mínimo relativo.
-% 
+%
 % \item En cualquier otro, $x_0$ es un \emph{punto de inflexión}.
 % \end{itemize}
-% 
+%
 % \subsection{Estudio de la concavidad de una función}
 % Se dice que una función $f(x)$ es \emph{cóncava} en un intervalo $I$
 % si $\forall\, x_1, x_2 \in I$, el segmento de extremos
 % $(x_1,f(x_1))$ y $(x_2,f(x_2))$ queda por encima de la gráfica de
 % $f$.
-% 
+%
 % Análogamente se dirá que es \emph{convexa} si el segmento anterior
 % queda por debajo de la gráfica de $f$.
-% 
+%
 % Diremos que la función $f(x)$ tiene un \emph{punto de inflexión} en
 % $x_0$ si en ese punto la función pasa de cóncava a convexa o de
 % convexa a cóncava. Estos conceptos se ilustran en la
 % figura~\ref{g:concavidad_derivada}.
-% 
+%
 % \begin{figure}[h!]
 % \centering \subfigure[Función cóncava.] {\label{g:funcion_concava_arriba}
 % \scalebox{1}{\input{img/funciones_elementales/funcion_concava_arriba}}}\qquad
@@ -218,8 +218,8 @@
 % \caption{Concavidad de una función.}
 % \label{g:concavidad_derivada}
 % \end{figure}
-% 
-% 
+%
+%
 % Si $f$ es una función derivable en el intervalo $I$, el signo de la
 % segunda derivada puede utilizarse para estudiar la concavidad de la
 % función ya que se cumple:
@@ -227,7 +227,7 @@
 % \item $f$ es cóncava en $x_0\in I$, si y sólo si, $f''(x_0)\geq 0$.
 % \item $f$ es convexa en $x_0\in I$, si y sólo si, $f''(x_0)\leq 0$.
 % \end{itemize}
-% 
+%
 % \newpage
 
 \section{Solved exercises}
@@ -258,8 +258,8 @@
 % que representar en la misma gráfica tanto $f$ como la recta calculada.
 % \end{enumerate}
 % \end{indication}
-% 
-% 
+%
+%
 % \item Calcular la tasa de variación instantánea de $f$ en el punto $-1$ haciendo uso de límites, y calcular la correspondiente recta
 % tangente.
 % \begin{indication}
@@ -271,7 +271,7 @@
 % {h}
 % \]
 % en donde, por aligerar la notación, hemos llamado $h$ a lo que en la teoría denominábamos $\Delta x$.
-% 
+%
 % Por lo tanto, para calcular la derivada de la función $f$ en $a=-1$ mediante la definición, procedemos con:
 % \[
 % f'(-1) = \mathop {\lim }\limits_{h \to 0} \frac{{f(-1 + h) - f(-1)}}
@@ -295,7 +295,7 @@
 \item $f(x)=|x-1|$  at $x=1$.
 \item $g(x)=
 \begin{cases}
-x\sin\frac{1}{x} & \mbox{if $x\neq o$;}\\
+x\sin\frac{1}{x} & \mbox{if $x\neq 0$;}\\
 0 & \mbox{if $x=0$}
 \end{cases}$
 \end{enumerate}
@@ -304,12 +304,12 @@ x\sin\frac{1}{x} & \mbox{if $x\neq o$;}\\
 For the function $f(x)$ take the following steps:
 \begin{enumerate}
 \item Define the function in the Algebra window naming it \command{f(x)}.
-\item Enter the expression \command{(f(1+h)-f(1))/h}, that correspond to the average rate of change of $f$ at $1$, in the Algebra window and select it. 
+\item Enter the expression \command{(f(1+h)-f(1))/h}, that correspond to the average rate of change of $f$ at $1$, in the Algebra window and select it.
 \item Select the menu \menu{Calculus > Limit} or click the button \button{Limit}.
-\item In the dialog shown enter the point O in the field \field{Limit Point}, select \command{Left} from the list \field{Approach From} and click the button \button{Simplify}. 
+\item In the dialog shown enter the point O in the field \field{Limit Point}, select \command{Left} from the list \field{Approach From} and click the button \button{Simplify}.
 \item Repeat the three previous steps but selecting \command{Right} from the list \field{Approach From}.
 \end{enumerate}
-As the lateral limits are not the same, the is no derivative at that point. 
+As the lateral limits are not the same, the is no derivative at that point.
 
 For the function $g(x)$ repeat the previous steps but naming the function \command{g(x)} and entering the expression \command{g(h)/h}.
 \end{indication}
@@ -337,11 +337,11 @@ For each function repeat the following steps:
 
 
 \item Compute the tangent line to the graph of the function $f(x)=\log(\sqrt{x+1})$ at $x=1$.
-Plot the graph of the function and the tangent line. 
+Plot the graph of the function and the tangent line.
 \begin{indication}
 \begin{enumerate}
 \item Define the function in the Algebra window naming it \command{f(x)}.
-\item Open a new graphic window with the menu \menu{Window > New 2d-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.  
+\item Open a new graphic window with the menu \menu{Window > New 2d-plot Window} and select the menu \menu{Window > Tile Vertically} to see the Algebra and the graphic windows at the same time.
 \item Click the button \button{Plot} in the graphic window.
 \item Enter the expression \command{f(1)+f'(1)(x-1)}, corresponding to the equation of the tangent line to the graph of $f$ at $x=1$, in the Algebra window and click the button \button{Simplify}.
 \item Click the button \button{Plot} in the graphic window.
@@ -357,7 +357,7 @@ g(x)=\dfrac{2x^{3}-3x}{x^{2}+1}.
 \item  Plot the graph of $g$.
 \begin{indication}
 \item Define the function in the Algebra window naming it \command{g(x)}.
-\item Open a new graphic window with the menu \menu{Window > New 2d-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.  
+\item Open a new graphic window with the menu \menu{Window > New 2d-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.
 \item Click the button \button{Plot} in the graphic window.
 \end{indication}
 
@@ -380,15 +380,15 @@ g(x)=\dfrac{2x^{3}-3x}{x^{2}+1}.
 
 \item Study the increase and decrease of $g$ and determine its relative extrema.
 \begin{indication}
-Consider the intervals defined by the critical points of the function. 
-For each interval study the sign of the first derivative. 
-If the first derivative is positive the function is increasing. 
+Consider the intervals defined by the critical points of the function.
+For each interval study the sign of the first derivative.
+If the first derivative is positive the function is increasing.
 If the first derivative is negative the function is decreasing.
 
-For the relative extrema consider the critical points of the function. 
-At each critical point study the sign of the first derivative to the left an to the right. 
-If the first derivative is positive to the left and negative to the right, the is a relative maximum. 
-If the first derivative is negative to the left and positive to the right, the is a relative minimum. 
+For the relative extrema consider the critical points of the function.
+At each critical point study the sign of the first derivative to the left an to the right.
+If the first derivative is positive to the left and negative to the right, the is a relative maximum.
+If the first derivative is negative to the left and positive to the right, the is a relative minimum.
 \end{indication}
 
 \item Compute the second derivative of $g$ an plot its graph.
@@ -408,16 +408,16 @@ If the first derivative is negative to the left and positive to the right, the i
 \end{enumerate}
 \end{indication}
 
-\item Study the concavity of $g$ and determine its inflection points. 
+\item Study the concavity of $g$ and determine its inflection points.
 \begin{indication}
-Consider the intervals defined by the zeros of the second derivative. 
-For each interval study the sign of the second derivative. 
-If the second derivative is positive the function is concave up. 
+Consider the intervals defined by the zeros of the second derivative.
+For each interval study the sign of the second derivative.
+If the second derivative is positive the function is concave up.
 If the derivative derivative is negative the function is concave down.
 
-For the inflection points consider the zeros of the second derivative. 
-At each zero study the sign of the second derivative to the left an to the right. 
-If the sign of the second derivative is different to the left and to the right, there is an inflection point. 
+For the inflection points consider the zeros of the second derivative.
+At each zero study the sign of the second derivative to the left an to the right.
+If the sign of the second derivative is different to the left and to the right, there is an inflection point.
 \end{indication}
 \end{enumerate}
 
@@ -435,14 +435,14 @@ x^3 & \mbox{if $x<0$}.
 \end{cases}
 \]
 
-\item For each of the following functions compute the equation of the tangent and normal lines at the points given. 
+\item For each of the following functions compute the equation of the tangent and normal lines at the points given.
 \begin{enumerate}
 \item  $y=x^{\sin x},\quad x_{0}=\pi/2$.
 \item  $y=(3-x^2)^4\sqrt[3]{5x-4},\quad x_{0}=1$.
 \item  $y=\log \sqrt{\dfrac{1+x}{1-x}}+\arctan x, \quad x_{0}=0$.
 \end{enumerate}
 
-\item Study the increase, decrease, relative extrema, concavity and inflection points of the function $f(x)=\dfrac{x}{x^2-2}$. 
+\item Study the increase, decrease, relative extrema, concavity and inflection points of the function $f(x)=\dfrac{x}{x^2-2}$.
 
 \item A drug has to be given to patients in cylindrical pills.
 The content of the drug in each pill is 0.15 ml; determine the dimensions of the cylinder so that the amount of material used to make it (the pill) is minimal.
