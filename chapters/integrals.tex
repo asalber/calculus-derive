@@ -354,11 +354,11 @@ To plot the graph of the parabola:
 \end{enumerate}
 To compute the area enter the expression \command{INT(ABS(f(x)), x, 2, 7)} in the Algebra window and click the button \button{Simplify}.
 
-To plot the area enter the expression \command{x>2 $\wedge$ x<7 $\wedge$ y>0 $\wedge∧$ y<⎮f(x)⎮} in the Algebra window and click the button \button{Plot} in the graphic window.
+To plot the area enter the expression \command{x>2 $\wedge$ x<7 $\wedge$ y>MIN(0,f(x)) $\wedge$ y<MAX(0,f(x))} in the Algebra window and click the button \button{Plot} in the graphic window.
 \end{indication}
 
 
-\item Compute and plot the area between the graphs of the functions $\sin x$ and $\cos x$ in the interval $[0,2\pi]$.min(sin(x),cos(x))
+\item Compute and plot the area between the graphs of the functions $\sin x$ and $\cos x$ in the interval $[0,2\pi]$.
 \begin{indication}
 To plot the area:
 \begin{enumerate}
@@ -366,7 +366,7 @@ To plot the area:
 \item Open a new graphic window with the menu \menu{Window > New 2d-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.
 \item Click the button \button{Plot} in the graphic window.
 \item Define the second function in the Algebra window entering the expression \command{f(x):=cos x} and click the button \button{Plot} in the graphic window.
-\item Enter the expression \command{x>0 $\wedge$ x<2pi $\wedge$ y>MIN(f(x),g(x)) ∧ y<MAX(f(x),g(x))} in the Algebra window and click the button \button{Plot} in the graphic window.
+\item Enter the expression \command{x>0 $\wedge$ x<2pi $\wedge$ y>MIN(f(x),g(x)) $\wedge$ y<MAX(f(x),g(x))} in the Algebra window and click the button \button{Plot} in the graphic window.
 \end{enumerate}
 To compute the area enter the expression \command{INT(ABS(f(x)-g(x)), x, 0, 2pi)} in the Algebra window and click the button \button{Simplify}.
 \end{indication}
