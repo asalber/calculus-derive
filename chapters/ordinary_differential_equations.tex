@@ -1,0 +1,288 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\chapter{Ordinary Differential Equations}
+
+% \section{Fundamentos teóricos}
+% 
+% Muchos fenómenos de la naturaleza como la desintegración radiactiva, algunas reacciones químicas, el crecimiento de
+% poblaciones o algunos problemas gravitatorios responden a determinadas ecuaciones en las que se relaciona una función
+% con sus derivatives. 
+% Este tipo de ecuaciones se conocen como \emph{differential equations} y en esta práctica
+% estudiaremos cómo resolverlas.
+% 
+% \subsection{Ecuaciones diferenciales ordinarias (E.D.O.)}
+% Se llama \emph{ordinary differential equation (E.D.O.)} a una relación entre una variable independiente $x$, una función
+% desconocida $y(x)$, y alguna de las derivatives de $y$ con respecto a $x$. 
+% Esto es, a una expresión de la forma
+% \[
+% F(x,y,y',y'',...,y^{(n})=0.
+% \]
+% 
+% Llamaremos \emph{orden de la ordinary differential equation} al mayor orden de las derivatives que aparezcan en la
+% ecuación. 
+% Así, la forma más general de una E.D.O. de primer orden es $F(x,y,y')=0$, que puede quedar de la forma $y'=G(x,y)$ si se
+% puede despejar $y'$.
+% 
+% \subsubsection*{Solución de una E.D.O.}
+% Diremos que una función $f(x)$ es \emph{solución} o \emph{integral} de la EDO $F(x,y,y',y'',...,y^{(n})=0$, si al
+% sustituir en ella $y$ y sus derivatives por $f(x)$ y sus derivatives respectivas, la ecuación se satisface, es decir
+% $F(x,f(x),f'(x),f''(x),...,f^{(n}(x))=0$.
+% 
+% En general una differential equation admite infinitas soluciones, y se limita su número imponiendo condiciones iniciales.
+% 
+% \subsection{Ecuaciones diferenciales ordinarias de primer orden}
+% Una ordinary differential equation de primer orden es una ecuación de la forma
+% \[
+% y'=F(x,y).
+% \]
+% Esta es la forma estándar de escribir la ecuación, aunque a veces, también se suele representar en la forma diferencial como
+% \[
+% M(x,y)dx+N(x,y)dy=0.
+% \]
+% 
+% \subsubsection*{Soluciones general y particular de una E.D.O. de primer orden}
+% Se llama \emph{solución general} o \emph{integral general} de una ordinary differential equation de primer orden a una
+% función $y=f(x,c)$, donde $c$ es una constante real, tal que para cada valor de $c$, la función $y=f(x,c)$ es una
+% solución de la differential equation. 
+% A esta solución así obtenida para un valor concreto de $c$ se le denomina \emph{solución particular} o \emph{integral
+% particular} de la differential equation.
+% 
+% En la práctica, la determinación de las constantes que conducen a una solución particular se realiza imponiendo ciertas
+% condiciones iniciales en el problema, que son los valores que debe tomar la solución en determinados puntos. 
+% Así, para una ordinary differential equation de primer orden $y'=F(x,y)$, una initial condition se expresaría de la
+% forma $y(x_{0})=y_{0}$, y la solución particular sería una función $y=f(x)$ tal que $f'(x)=F(x,f(x))$, y $f(x_0)=y_0$.
+% 
+% Por ejemplo, si consideramos la differential equation $y'=y$, resulta sencillo comprobar que su solución general es
+% $f(x)=ce^x$, ya que $f'(x)=ce^x$ y se cumple la ecuación. 
+% Si para esta misma ecuación tenemos la initial condition $y(0)=1$, entonces, al imponer dicha condición a la solución
+% general, se tiene $f(0)=ce^0=1$, de donde se deduce que $c=1$, y por tanto la solución particular sería $f(x)=e^x$.
+% 
+% Geométricamente, la solución general de una differential equation de primer orden representa una familia de curvas,
+% denominadas \emph{curvas integrals}, una para cada valor concreto asignado a la constante arbitraria. 
+% En la figura~\ref{g:curvas integrals} se muestran las curvas integrals de la differential equation $y'=y$.
+% 
+% \begin{figure}[h!]
+% \begin{center}
+% \scalebox{1}{\input{img/ecuaciones_diferenciales/curvas_integrals}}
+% \caption{Familia de curvas integrals que son solución de la ecuación $y'=y$.}
+% \label{g:curvas integrals}
+% \end{center}
+% \end{figure}
+% 
+% \subsubsection*{Existencia y unicidad de soluciones}
+% El siguiente teorema aporta una condición suficiente, aunque no necesaria, para la existencia y la unicidad de la
+% solución de una ordinary differential equation de primer orden.
+% 
+% \begin{teoremasn}
+% Si $F(x,y)$ y $\partial F/\partial y$ son funciones continuas en un entorno del punto $(x_0,y_0)$, entonces la ecuación
+% diferencial $y'=F(x,y)$ tiene una solución $y=f(x)$ que verifica $f(x_0)=y_0$, y además esa solución es única.
+% \end{teoremasn}
+% Cuando no se cumplen las condiciones del teorema hay que tener cuidado porque la ecuación puede no tener solución, o
+% bien tener soluciones múltiples como ocurre con la ecuación $y'=3\sqrt[3]{y^2}$, que tiene dos soluciones $y=0$ y
+% $y=x^3$ que pasan por el punto $(0,0)$, ya que $\frac{\partial}{\partial y}(3\sqrt[3]{y^2})=2/\sqrt[3]{y}$ que no existe
+% en $(0,0)$.
+% 
+% Desafortunadamente, el teorema anterior sólo nos habla de la existencia de una solución pero no nos proporciona la forma
+% de obtenerla. 
+% En general, no existe una única técnica de resolución de ordinary differential equations de primer orden
+% $M(x,y)dx+N(x,y)dy=0$, sino que dependiendo de la forma que tengan $M(x,y)$ y $N(x,y)$, se utilizan distintas técnicas.
+% 
+% 
+% \subsection{EDO de variables separables}
+% Una E.D.O. de primer orden es de \emph{variables separables} si se puede poner de la forma $y'g(y)=f(x)$ o bien
+% $M(x)dx+N(y)dy=0$, donde $M(x)$ es una función que sólo depende de $x$ y $N(y)$ sólo depende de $y$.
+% 
+% La solución de una ecuación de este tipo se obtiene fácilmente integrando $M(x)$ y $N(y)$ por separado, es decir
+% \[
+% \int M(x)\,dx=-\int N(y)\,dy.
+% \]
+% 
+% \subsection{EDO Homogéneas}
+% Se dice que una función $F(x,y)$ es \emph{homogénea} de grado $n$ si se cumple $F(kx,ky)=k^nF(x,y)$.
+% 
+% Una E.D.O. de primer orden es \emph{homogénea} si se puede poner de la forma
+% $y'=f\left(\dfrac{y}{x}\right)$ o bien $M(x,y)dx+N(x,y)dy=0$ donde $M(x,y)$ y $N(x,y)$ son funciones homogéneas del mismo grado.
+% 
+% Las ecuaciones homogéneas son fácilmente reducibles a ecuaciones de variables separables mediante el cambio $y=ux$,
+% siendo $u$ una función derivable de $x$.
+% 
+% \subsection{EDO Lineales}
+% Una E.D.O. de primer orden es \emph{lineal} si se puede poner de la forma $y'+ P(x)y = Q(x)$, donde $P$ y $Q$ son
+% funciones continuas de $x$.
+% 
+% Para resolver este tipo de ecuaciones se utiliza la técnica de los factores integrantes. 
+% Un factor integrante es una función $u(x)$ cuya derivative sea $P(x)u(x)$, con lo que al multiplicar $u(x)$ por el lado
+% izquierdo de la ecuación, el result es la derivative del producto $u(x)y$, es decir
+% \[
+% u(x)y'+u(x)P(x)y=\frac{d}{dx}(u(x)y).
+% \]
+% A partir de aquí, si también multiplicamos por $u(x)$ el lado derecho de la ecuación tenemos
+% \[
+% \frac{d}{dx}(u(x)y)=Q(x)u(x),
+% \]
+% por lo que integrando, resulta
+% \[
+% u(x)y=\int Q(x)u(x)\,dx
+% \]
+% de donde se puede despejar fácilmente $y$.
+% 
+% Por último, resulta fácil comprobar que un factor integrante de esta ecuación es $u(x)=e^{\int P(x)\, dx}$, de manera
+% que la solución quedaría
+% \[
+% y=e^{-\int P(x)\,dx}\int Q(x)e^{\int P(x)\,dx}\,dx+C.
+% \]
+% 
+% \newpage
+
+\section{Solved exercises}
+\begin{indication}
+To solve ordinary differential equations with Derive, we use the following commands
+\begin{quote}
+\texttt{DSOLVE1\_GEN(p,q,x,y,c)} gives the general solution of a differential equation with form $p(x,y)+q(x,y)y'=0$.
+
+\texttt{DSOLVE1(p,q,x,y,$x_{0},y_{0}$)} gives the particular solution of a differential equation with form $p(x,y)+q(x,y)y'=0$, with initial condition $y_{0}=y(x_{0})$.
+\end{quote}
+\end{indication}
+
+\begin{enumerate}[leftmargin=*]
+\item Solve the following separable differential equations and plot their integral curves for the constants  $c=-1$, $c=-2$ y $c=-3$:
+\begin{enumerate}
+\item $-2x(1+e^y)+e^y(1+x^{2})y'=0$.
+\begin{indication}
+Observe that the equation is written as $p(x,y)+q(x,y)y'=0$, with $p(x,y)=-2x(1+e^y)$ and
+$q(x,y)=e^y(1+x^{2})$.
+
+To solve the differential equation enter the expression \command{DSOLVE1\_GEN(-2x(1+\#e\^{}y),\#e\^{}y(1+x\^{}2),x,y,c)} and click the button \button{Simplify}.
+
+To plot the integral curves:
+\begin{enumerate}[resume]
+\item Select the menu \button{Simplify > Variable Substitution} o click the button \button{Varible Substitution}.
+\item In the dialog shown select the variable $c$, enter the value $-1$ into the field \field{New Value} and click the
+button \button{Simplify}.
+\item Open a new graphic window with the menu \menu{Window > New 2d-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+Repeat the previous steps but entering the values $-2$ and $-3$ for $c$.
+\end{indication}
+
+\item $y-xy'=1+x^2y'$.
+\begin{indication}
+Before solving the equation we have to write it in the form $p(x,y)+q(x,y)y'=0$,
+\[
+y-xy'=1+x^2y' \Leftrightarrow 1+x^2y'-y+xy'=0 \Leftrightarrow 1-y+(x^2+x)y'=0
+\]
+so $p(x,y)=1-y$ and $q(x,y)=x^2+x$.
+
+To solve the differential equation enter the expression \command{DSOLVE1\_GEN(1-y,x\^{}2+x,x,y,c)} and click the button \button{Simplify}.
+
+To plot the integral curves:
+\begin{enumerate}[resume]
+\item Select the menu \menu{Simplify > Variable Substitution} o click the button \button{Varible Substitution}.
+\item In the dialog shown select the variable $c$, enter the value $-1$ into the field \field{New Value} and click the
+button \button{Simplify}.
+\item Open a new graphic window with the menu \menu{Window > New 2d-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+Repeat the previous steps but entering the values $-2$ and $-3$ for $c$.
+\end{indication}
+\end{enumerate}
+
+
+\item Solve the following differential equations with the initial conditions given:
+\begin{enumerate}
+\item $x\sqrt{1-y^2}+y\sqrt{1-x^2} y'=0$, with the initial condition $y(0)=1$.
+\begin{indication}
+Observe that the equation is written as $p(x,y)+q(x,y)y'=0$, with $p(x,y)=x\sqrt{1-y^2}$ and $q(x,y)=y\sqrt{1-x^2}$.
+
+To solve the differential equation enter the expression \command{DSOLVE1(xsqrt(1-y\^{}2),ysqrt(1-x\^{}2),x,y,0,1)} and click the button \button{Simplify}.
+\end{indication}
+
+
+\item $(1+e^x)yy'=e^y$, with the initial condition $y(0)=0$.
+\begin{indication}
+Before solving the equation we have to write it in the form $p(x,y)+q(x,y)y'=0$,
+\[
+(1+e^x)yy'=e^y \Leftrightarrow -e^y+(1+e^x)yy'=0,
+\]
+so $p(x,y)=-e^y$ and $q(x,y)=(1+e^x)y$.
+
+To solve the differential equation enter the expression \command{DSOLVE1(-\#e\^{}y,(1+\#e\^{}x)y,x,y,0,0)} and click the button \button{Simplify}.
+\end{indication}
+
+
+\item $y'+y\cos x=\sin x\cos x$ with the initial condition $y(0)=1$.
+\begin{indication}
+Before solving the equation we have to write it in the form $p(x,y)+q(x,y)y'=0$,
+\[
+y'+y\cos x=\sin x\cos x \Leftrightarrow -\sin x\cos x+y\cos x+y'=0,
+\]
+so $p(x,y)=-\sin x\cos x+y\cos x$ and $q(x,y)=1$.
+
+To solve the differential equation enter the expression \command{DSOLVE1(-sinxcosx+ycosx,1,x,y,0,1)} and click the button \button{Simplify}.
+\end{indication}
+\end{enumerate}
+
+\item The speed at which sugar dissolves into water is proportional to the amount of sugar left without dissolving. 
+Suppose we have $13.6$ kg of sugar tat we want to mix with water, and after 4 hours there are 4.5 kg without dissolving.
+How long will it take, from the beginning of the process, for the 95\% of the sugar to be dissolved?
+\begin{indication}
+The differential equation that explains the dissolution of sugar into water is $y'=ky$, where $y$ is the amount of sugar, $t$ is time and $k$ is the dissolution constant of sugar. 
+This equation can be written in the form $p(t,y)+q(t,y)y'=0$,
+\[
+y'=ky \Leftrightarrow -ky+y'=0,
+\]
+so $p(t,y)=-ky$ and $q(t,y)=1$.
+
+To solve the differential equation enter the expression \command{DSOLVE1(-ky,1,t,y,0,13.6)} and click the button \button{Simplify}.
+
+To get the dissolution constant of sugar we impose the initial condition $y(4)=4.5$:
+\begin{enumerate}
+\item Select the menu \menu{Simplify > Variable Substitution} o click the button \button{Varible Substitution}.
+\item In the dialog shown select the variable $t$, enter the value $4$ into the field \field{New Value}, select the variable $y$, enter the value $4.5$ into the field \field{New Value} and click the
+button \button{Simplify}.
+\item Click the button \button{Approximate}.
+\end{enumerate}
+
+Finally, to get the time required to have $5\%$ of sugar without dissolving, 
+\begin{enumerate}[resume]
+\item Select the expression corresponding to the particular solution of the differential equation. 
+\item Select the menu \menu{Simplify > Variable Substitution} o click the button \button{Varible Substitution}.
+\item In the dialog shown select the variable $k$, enter the previous value got for $k$ in the field \field{New Value},  select the variable $y$, enter the value $13.6*0.05$ into the field \field{New Value} and click the
+button \button{Simplify}.
+\item Click the button \button{Approximate}.
+\end{enumerate}
+\end{indication}
+
+\end{enumerate}
+
+
+\section{Proposed exercises}
+\begin{enumerate}[leftmargin=*]
+
+\item Solve the following differential equations:
+\begin{enumerate}
+\item $(1+y^{2})+xyy'=0$.
+\item $xy'-4y+2x^2+4=0$.
+\item $(y^{2}+xy^{2})y'+x^{2}-yx^{2}=0$.
+\item $(x^3-y^3)dx+2x^2ydy=0$.
+\item $(x^2+y^2+x)+xydy=0$.
+\end{enumerate}
+
+\item Compute the curves $(x,y)$ such that the slope of the tangent line is equal to the value of $x$ at any point.  
+Which of these curves passes through the origin of coordinates?
+
+\item If a person receives glucose by an intravenous drip, the concentration of glucose $c(t)$ with respect to time follows this differential equation:
+\[
+\frac{dc}{dt}=\frac{G}{100V}-kc.
+\]
+Here $G$ is the (constant) speed at which glucose is given to the patient, $V$ is the total volume of blood in the body, and $k$ is a positive constant that varies with each patient.
+Compute $c(t)$.
+
+\item A water tank contains 10 l of water.
+Suppose we start pouring into the tank a solution of water with 100 g of salt per liter, at a rate of 4 l per minute.
+We also stir the water tank, to keep a uniform distribution of salt, and, at the same time, we release water (with salt) at a rate of 2 l per minute.
+How long will it take to the tank to be full?
+How much salt will there be in the tank in that moment?
+
+\noindent\textbf{Remark:} The variation rate of salt in the tank is equal to the difference between the amount of salt that comes into the tank and the amount of salt that is taken from the tank.
+\end{enumerate}
+
