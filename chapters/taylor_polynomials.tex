@@ -1,14 +1,14 @@
 % Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 \chapter{Taylor polynomials}
 
-% \section{Fundamentos teóricos}
+% \section{Theoretical foundations}
 % A veces, las funciones elementales como las trigonométricas, las exponenciales y las logarítmicas, o composiciones de
 % las mismas, son difíciles de tratar y suelen aproximarse mediante polinomios que son funciones mucho más simples y con
 % muy buenas propiedades, ya que son continuas y derivables (a cualquier orden) en todos los reales.
 % 
 % \subsection{Polinomios de Taylor de funciones de una variable}
 % \begin{definicion}[Polinomio de Taylor]
-% Dada una función $f(x)$, $n$ veces derivable en un punto $a$, se llama \emph{polinomio de Taylor} de orden $n$ para $f$
+% Dada una function $f(x)$, $n$ veces derivable en un punto $a$, se llama \emph{polinomio de Taylor} de orden $n$ para $f$
 % en $a$, al polinomio
 % \[
 % P_{n,f,a}(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\cdots+\frac{f^{(n}(a)}{n!}(x-a)^n= \sum_{i=0}^{n}\frac{f^{(i}(a)}{i!}(x-a)^i.
@@ -22,35 +22,35 @@
 % \begin{figure}[h!]
 % \begin{center}
 % \scalebox{1}{\input{img/polinomios_taylor/polinomios_seno}}
-% \caption{Polinomios de Taylor de distintos grados para la función $\sin x$ en el punto 0.}
+% \caption{Polinomios de Taylor de distintos grados para la function $\sin x$ en el punto 0.}
 % \label{g:polinomios}
 % \end{center}
 % \end{figure}
 % 
 % \subsubsection*{Polinomio de Mc Laurin}
-% Cuando nos interesa aproximar una función en un entorno del 0, la ecuación del polinomio de Taylor resulta especialmente simple:
+% Cuando nos interesa aproximar una function en un entorno del 0, la ecuación del polinomio de Taylor resulta especialmente simple:
 % \[
 % P_{n,f,0}(x)=f(0)+f'(0)x+\frac{f''(0)}{2!}x^2+\cdots+\frac{f^{(n}(0)}{n!}x^n= \sum_{i=0}^{n}\frac{f^{(i}(0)}{i!}x^i,
 % \]
 % y este polinomio se conoce como \emph{polinomio de Mc Laurin} de orden $n$ de $f$.
 % 
 % \subsubsection*{Resto de Taylor}
-% Los polinomios de Taylor nos permiten calcular el valor aproximado de una función en un entorno de un punto, pero normalmente el valor que proporciona el polinomio de Taylor difiere del valor real de la función, es decir, se comete un error en la aproximación. Dicho error se conoce como el \emph{resto de Taylor} de orden $n$ para $f$ en $a$, y es
+% Los polinomios de Taylor nos permiten calcular el valor aproximado de una function en un entorno de un punto, pero normalmente el valor que proporciona el polinomio de Taylor difiere del valor real de la function, es decir, se comete un error en la aproximación. Dicho error se conoce como el \emph{resto de Taylor} de orden $n$ para $f$ en $a$, y es
 % \[
 % R_{n,f,a}(x)=f(x)-P_{n,f,a}(x).
 % \]
 % 
-% El resto mide el error cometido al aproximar $f(x)$ mediante $P_{n,f,a}(x)$ y nos permite expresar la función $f$ como la suma de un polinomio de Taylor más su resto correspondiente:
+% El resto mide el error cometido al aproximar $f(x)$ mediante $P_{n,f,a}(x)$ y nos permite expresar la function $f$ como la suma de un polinomio de Taylor más su resto correspondiente:
 % \[
 % f(x)=P_{n,f,a}(x)+R_{n,f,a}(x).
 % \]
 % Esta última expresión se conoce como \emph{fórmula de Taylor} de orden $n$ para $f$ en el punto $a$.
 % 
 % \subsubsection*{Forma de Lagrange del resto}
-% Normalmente, cuando se aproxima una función mediante un polinomio de Taylor, no se conoce el error cometido en la aproximación. No obstante, es posible acotar dicho error de acuerdo al siguiente teorema.
+% Normalmente, cuando se aproxima una function mediante un polinomio de Taylor, no se conoce el error cometido en la aproximación. No obstante, es posible acotar dicho error de acuerdo al siguiente teorema.
 % 
 % \begin{teorema}[Resto de Lagrange]
-% Sea $f$ una función para la que las $n+1$ primeras derivadas están definidas en el intervalo $[a,x]$. Entonces existe un
+% Sea $f$ una function para la que las $n+1$ primeras derivatives están definidas en el intervalo $[a,x]$. Entonces existe un
 % $t\in(a,x)$ tal que el resto de Taylor de orden $n$ para $f$ en el punto $a$ viene dado por
 % \[
 % R_{n,f,a}(x)=\frac{f^{(n+1}(t)}{(n+1)!}(x-a)^{n+1}.
@@ -58,10 +58,10 @@
 % \end{teorema}
 % Esta expresión se conoce como \emph{forma de Lagrange del resto}.
 % 
-% Este teorema nos permite acotar el resto en valor absoluto, ya que una vez fijado el valor de $x$ donde queremos aproximar el valor de la función, el resto en la forma de Lagrange es una función que sólo depende de $t$. Puesto que $t\in (a,x)$, basta con encontrar el máximo del valor absoluto de esta función en dicho intervalo para tener una cota del error cometido.
+% Este teorema nos permite acotar el resto en valor absoluto, ya que una vez fijado el valor de $x$ donde queremos aproximar el valor de la function, el resto en la forma de Lagrange es una function que sólo depende de $t$. Puesto que $t\in (a,x)$, basta con encontrar el máximo del valor absoluto de esta function en dicho intervalo para tener una cota del error cometido.
 % 
 % \subsection{Polinomios de Taylor de funciones de varias variables}
-% Los polinomios de Taylor pueden generalizarse a funciones de más de una variable. Así, por ejemplo, si $f$ es un campo
+% Los polinomios de Taylor pueden generalizarse a funciones de más de una variable. Así, por ejemplo, si $f$ es un field
 % escalar, el \emph{polinomio de Taylor} de primer grado de $f$ alrededor de un punto $a$ es
 % \begin{align*}
 % P^2_{f,a}(\mathbf{v})&=f(a)+\nabla f(a)\mathbf{v},
@@ -137,84 +137,58 @@ Compute the approximation error.
 \item Enter the expression \command{ABS(p3(1/2)-f(1.2))} in the Algebra windows and click the button \button{Approximate} to get the approximation error.
 \end{enumerate}
 \end{indication}
-% 
-% \item Dada la función $f(x,y)=\sqrt{xy}$, se pide:
-% \begin{enumerate}
-% \item Definir la función y dibujar su gráfica.
-% \begin{indication}
-% \begin{enumerate}
-% \item Definir la función introduciendo la expresión \comando{f(x,y):=sqrt(xy)}.
-% \item Hacer clic en el botón \boton{Ventana 3D} para pasar a la ventana de representación de gráficas 3D.
-% \item Hacer clic en el botón \boton{Representar}.
-% \end{enumerate}
-% \end{indication}
-% 
-% \item Calcular el polinomio de Taylor de primer grado de $f$ en el punto $(8,2)$.
-% \begin{indication}
-% \begin{enumerate}
-% \item Introducir la expresión \comando{p1(x,y):=f(8,2)+f'(8,2)[x-8,y-2]}.
-% \item Hacer clic en el botón \boton{Simplificar}.
-% \end{enumerate}
-% \end{indication}
-% 
-% \item Representar gráficamente el polinomio anterior.
-% \begin{indication}
-% \begin{enumerate}
-% \item Seleccionar la expresión correspondiente al polinomio. 
-% \item Hacer clic en el botón \boton{Ventana 3D} para pasar a la ventana de representación de gráficas 3D.
-% \item Hacer clic en el botón \boton{Representar}.
-% \end{enumerate}
-% \end{indication}
-% 
-% \item Utilizar el polinomio anterior para calcular el valor aproximado de $\sqrt{8.02\cdot 1.99}$.
-% \begin{indication}
-% \begin{enumerate}
-% \item Introducir la expresión \comando{p1(8.02,1.99)}.
-% \item Hacer clic en el botón \boton{Aproximar}.
-% \end{enumerate}
-% \end{indication}
-% 
-% \item Calcular el error cometido en la aproximación anterior.
-% \begin{indication}
-% \begin{enumerate}
-% \item Introducir la expresión \comando{abs(p1(8.02,1.99)-f(8.02,1.99))}.
-% \item Hacer clic en el botón \boton{Aproximar}.
-% \end{enumerate}
-% \end{indication}
-% 
-% \item Calcular el polinomio de Taylor de segundo grado de $f$ en el punto $(8,2)$.
-% \begin{indication}
-% \begin{enumerate}
-% \item Introducir la expresión \comando{p2(x,y):=p1(x,y)+1/2[x-8,y-2]f''(8,2)[x-8,y-2]}.
-% \item Hacer clic en el botón \boton{Simplificar}.
-% \end{enumerate}
-% \end{indication}
-% 
-% \item Representar gráficamente el polinomio anterior.
-% \begin{indication}
-% \begin{enumerate}
-% \item Seleccionar la expresión correspondiente al polinomio. 
-% \item Hacer clic en el botón \boton{Ventana 3D} para pasar a la ventana de representación de gráficas 3D.
-% \item Hacer clic en el botón \boton{Representar}.
-% \end{enumerate}
-% \end{indication}
-% 
-% \item Utilizar el polinomio anterior para calcular el valor aproximado de $\sqrt{8.02\cdot 1.99}$.
-% \begin{indication}
-% \begin{enumerate}
-% \item Introducir la expresión \comando{p2(8.02,1.99)}.
-% \item Hacer clic en el botón \boton{Aproximar}.
-% \end{enumerate}
-% \end{indication}
-% 
-% \item Calcular el error cometido en la aproximación anterior. ¿Qué polinomio da una aproximación mejor?
-% \begin{indication}
-% \begin{enumerate}
-% \item Introducir la expresión \comando{abs(p2(8.02,1.99)-f(8.02,1.99))}.
-% \item Hacer clic en el botón \boton{Aproximar}.
-% \end{enumerate}
-% \end{indication}
-% \end{enumerate}
+
+\item Given the function $f(x,y)=\sqrt{xy}$:
+\begin{enumerate}
+\item Plot its graph.
+\begin{indication}
+\begin{enumerate}
+\item Define the function entering the expression \command{f(x,y):=sqrt(xy)} in the Algebra window.
+\item Open a new graphic window with the menu \menu{Window > New 3D-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+\end{indication}
+
+\item Compute first degree Taylor polynomial of $f$ at the point $(8,2)$ and plot its graph.
+Check that you get the tangent plane to the graph of $f$ at the point $(8,2)$.
+\begin{indication}
+\begin{enumerate}
+\item Enter the expression \command{[8,2,f(8,2)]} in the Algebra window. 
+\item Click the button \button{Plot} in the graphic window.
+\item Enter the expression \command{p1(x,y):=f(8,2)+f'(8,2)[x-8,y-2]} in the Algebra window and click the button \button{Simplify}.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+\end{indication}
+
+\item Use the previous polynomial to approximate the value of $\sqrt{8.02\cdot 1.99}$.
+\begin{indication}
+Enter the expression \command{p1(8.02,1.99)} in the Algebra window and click the button \button{Approximate}.
+\end{indication}
+
+\item Compute the error of the previous approximation. 
+\begin{indication}
+Enter the expression \command{abs(p1(8.02,1.99)-f(8.02,1.99))} in the Algebra window and click the button \button{Approximate}.
+\end{indication}
+
+\item Compute second degree Taylor polynomial of $f$ at the point $(8,2)$ and plot its graph.
+\begin{indication}
+\begin{enumerate}
+\item Enter the expression \command{p2(x,y):=p1(x,y)+1/2[x-8,y-2]f''(8,2)[x-8,y-2]} in the Algebra window and click the button \button{Simplify}.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+\end{indication}
+
+\item Use the previous polynomial to approximate the value of $\sqrt{8.02\cdot 1.99}$.
+\begin{indication}
+Enter the expression \command{p2(8.02,1.99)} in the Algebra window and click the button \button{Approximate}.
+\end{indication}
+
+\item Compute the error of the previous approximation. 
+Check that the error of the second degree Taylor polynomial is less than the error with the first degree Taylor polynomial. 
+\begin{indication}
+Enter the expression \command{abs(p2(8.02,1.99)-f(8.02,1.99))} in the Algebra window and click the button \button{Approximate}.
+\end{indication}
+\end{enumerate}
 \end{enumerate}
 
 
@@ -234,9 +208,9 @@ Compute the approximation error.
 \[ \lim_{x\rightarrow 0}\frac{e^x-\cos x}{x}.\]
 \end{enumerate}
 
-% \item Calcular de manera aproximada el valor de $\log(0.09^3+0.99^3)$ usando:
-% \begin{enumerate}
-% \item Un polinomio de Taylor adecuado de primer orden.
-% \item Un polinomio de Taylor adecuado de segundo orden.
-%\end{enumerate}
+\item Compute the value of $\log(0.09^3+0.99^3)$ approximately using:
+\begin{enumerate}
+\item A first degree Taylor polynomial.
+\item A second degree Taylor polynomial.
+\end{enumerate}
 \end{enumerate}

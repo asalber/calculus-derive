@@ -1,0 +1,609 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\chapter{Several variables differentiable calculus}
+
+% \section{Theoretical foundations}
+% El concepto de derivative es uno de los más importantes del Cálculo
+% pues resulta de gran utilidad en el estudio de funciones y tiene
+% multitud de aplicaciones. En esta práctica introducimos este
+% concepto de derivative parcial en funciones de varias variables y presentamos algunas de sus aplicaciones.
+% 
+% \subsection{Derivadas parciales de una function de $n$ variables}
+% Recordemos que la derivative de una function de una única variable en
+% un punto $x=a$ se define como la tasa de variación instantánea de la
+% function en dicho punto. Si llamamos $h$ al incremento en la
+% variable, la derivative de la function en $x=a$ se nota como $f'(a)$ ó
+% $\dfrac{{df}} {{dx}}(a)$, y se calcula como:
+% 
+% \[
+% f'(a) = \frac{df}{dx}(a) = \mathop {\lim
+% }\limits_{h \to 0} \frac{{f(a + h) - f(a)}} {h}
+% \]
+% 
+% Y, en general, para cualquier $x$ en un conjunto en el que la
+% function de una única variable sea derivable, puede definirse la
+% function derivative $f'(x)$ ó $\dfrac{df}{dx}$,
+% mediante el límite:
+% 
+% \[
+% f'(x) = \frac{df}{dx} = \mathop {\lim }\limits_{h
+% \to 0} \frac{{f(x + h) - f(x)}} {h}
+% \]
+% que, no obstante, se calcula aplicando las adecuadas reglas de
+% derivación, más bien que acudiendo a la resolución directa del
+% límite.
+% 
+% De igual forma, si tenemos una function de $n$ variables
+% $f(\vec{x})=f(x_1,x_2,...,x_n)$, se pueden definir esas mismas tasas
+% de variación instantáneas con respecto a cada una de las variables
+% en un punto $\vec{a}=(a_1,a_2,...,a_n)$, para obtener las
+% \emph{Derivadas Parciales} de la function con respecto a cada una de
+% las variables en el punto $\vec{x}=\vec{a}$, que se notarán como
+% $f_{x_i}(\vec{a})$, o bien por $\dfrac{\partial f}{\partial
+% x_i}(\vec{a})$:
+% 
+% \[
+% f_{x_i}(\vec{a})=\dfrac{\partial f}{\partial
+% x_i}(\vec{a})=\lim_{h\rightarrow
+% 0}\frac{f(a_1,\ldots,a_i+h,\ldots,a_n)-f(a_1,\ldots,a_i,\ldots,a_n)}{h},
+% \]
+% 
+% Y la \emph{Función Derivada Parcial} con respecto a cualquiera de
+% las variables $x_i$, para todos los $\vec{x}$ de un conjunto, que se
+% notará como $f_{x_i}$, o $\dfrac{\partial f}{\partial x_i}$:
+% 
+% \[
+% f_{x_i}=\dfrac{\partial f}{\partial x_i}=\lim_{h\rightarrow
+% 0}\frac{f(x_1,\ldots,x_i+h,\ldots,x_n)-f(x_1,\ldots,x_i,\ldots,x_n)}{h},
+% \]
+% 
+% Lo cual, a efectos de cálculo, se resume en que la derivative parcial
+% de una function de varias variables se obtiene como la derivative de
+% una function de una única variable, que es aquella con respecto a la
+% que se deriva, y constantes el resto. Como consecuencia, las reglas
+% de derivación también se aplican en el cálculo de las derivatives
+% parciales de este tipo de funciones, sin más que considerar
+% constantes todas las variables con respecto a las que no estamos
+% derivando.
+% 
+% Si para las funciones de una variable la derivative en un punto $a$
+% tiene una interpretación gráfica sencilla como la pendiente de la
+% recta tangente a la gráfica de la function en el punto $(a,f(a))$,
+% también para funciones de dos variables la derivative parcial con
+% respecto a $x$ en el punto $\vec{a}=(x_0,y_0)$:
+% 
+% \[
+% \frac{{\partial f}} {{\partial x}}(x_0 ,y_0 ) = \mathop {\lim
+% }\limits_{h \to 0} \frac{{f(x_0  + h,y_0 ) - f(x_0 ,y_0 )}} {h}
+% \]
+% representa la pendiente de la recta tangente a la curva que se
+% obtiene al cortar la gráfica de la function en el punto
+% $(x_0,y_0,z_0=f(x_0,y_0))$ mediante el plano en el que $y$ permanece
+% constante e igual a $y_0$, y tan sólo varía el valor de $x$. E
+% igualmente, la derivative parcial con respecto a $y$ será la pendiente
+% de la recta tangente a la curva que se obtiene al cortar la gráfica
+% de la function en $(x_0,y_0,z_0=f(x_0,y_0))$ mediante el plano
+% $x=x_0$.
+% 
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[scale=0.4]{img/derivatives_varias_variables/tangentesuperficie}
+% \caption{La derivative parcial de una function $f(x,y)$ con respecto a
+% $x$ en el punto $(x_0,y_0)$, como la pendiente de la recta tangente
+% a la curva descrita por la intersección de la superficie de $f$ y el
+% plano de ecuación $y=y_0$.}
+% \end{center}
+% \end{figure}
+% 
+% 
+% \subsection{Derivadas parciales sucesivas de una function de $n$
+% variables}
+% 
+% De la misma forma que en las funciones de una variable, mediante los
+% límites que las definen, siempre y cuando existan, obtenemos las
+% segundas, terceras y derivatives de cualquier orden. Es decir, si $f$
+% es una function real de $n$ variables, con sus correspondientes
+% derivatives parciales, a su vez también las mismas son funciones de
+% $n$ variables que, en determinadas condiciones, podrán derivarse de
+% nuevo con respecto a sus $n$ variables para obtener derivatives
+% parciales segundas, y así sucesivamente hasta órdenes superiores de
+% derivación.
+% 
+% Para la derivative parcial de segundo orden se utiliza la notación
+% $f_{x_ix_j}$ ó $\dfrac{{\partial ^2 f}} {{\partial x_j \partial x_i
+% }}$:
+% 
+% 
+% \[
+% f_{x_i x_j }  = \frac{{\partial ^2 f}} {{\partial x_j \partial x_i
+% }} = \frac{\partial } {{\partial x_j }}\left( {\frac{{\partial f}}
+% {{\partial x_i }}} \right)
+% \]
+% 
+% Por ejemplo, para una function de dos variables $f(x,y)$, tenemos dos derivatives parciales de primer orden, que siguen
+% siendo funciones de las variables $x$ e $y$:
+% \[
+% \frac{\partial f}{\partial x}(x,y)\qquad \frac{\partial f}{\partial y}(x,y) 
+% \] y cuatro diferentes de segundo orden, que también serán funciones de $x$ e $y$, aunque ya no se
+% refleje para aligerar la notación:
+% \[
+% \frac{\partial}{\partial x}\left({\frac{\partial f}{\partial x}}\right) = \frac{\partial^2 f}{\partial x^2}
+% \]
+% \[
+% \frac{\partial}{\partial y}\left({\frac{\partial f}{\partial x}}\right) = \frac{\partial^2 f}{\partial y\partial x}
+% \]
+% \[
+% \frac{\partial}{\partial x}\left({\frac{\partial f}{\partial y}}\right) = \frac{\partial^2 f}{\partial x\partial y}
+% \]
+% \[
+% \frac{\partial}{\partial y}\left({\frac{\partial f}{\partial y}}\right) = \frac{\partial^2 f}{\partial y^2}
+% \]
+% 
+% La primera y la última reciben el nombre de derivatives segundas, mientras que la segunda y tercera se denominan derivatives
+% cruzadas.
+% 
+% Si procedemos con las derivatives parciales de tercer orden tendríamos ocho diferentes, y el número es más amplio con
+% funciones de tres o más variables.
+% No obstante, el teorema conocido con \emph{Teorema de Schwartz de las Derivadas Cruzadas} reduce el número de derivatives
+% parciales diferentes:
+% 
+% \begin{teorema}[Schwartz]
+% Si $f$ es una function de $n$ variables con derivatives parciales segundas cruzadas continuas en un conjunto abierto que
+% contiene al punto $a$, entonces en dicho punto se cumple
+% \[
+% \frac{\partial ^2 f}{\partial x_i \partial x_j } = \frac{\partial ^2 f}{\partial x_j \partial x_i }
+% \] 
+% e igual con las derivatives cruzadas de tercer y superior orden.
+% \end{teorema}
+% 
+% Es decir, si se cumplen las hipótesis del teorema de Schwartz concluimos que, a efectos de cálculo, tan sólo importa el
+% número de veces que se deriva respecto a cada variable, pero no el orden de la derivación.
+% 
+% \subsection{Vector gradiente y matriz hessiana}
+% A partir de las derivatives parciales de primer orden de un field escalar, podemos definir the following vector:
+% 
+% \begin{definicion}[Vector gradiente]
+% Dado un field escalar $f(x_1,\ldots,x_n)$, se llama \emph{gradiente} de $f$, y se escribe $\nabla f$, a la function que a
+% cada punto $a=(a_1,\ldots,a_n)$ le asigna el vector cuyas coordenadas cartesianas son las derivatives parciales de $f$ en
+% $a$,
+% \[
+% \nabla f(a)=\left(\frac{\partial f}{\partial x_1}(a),\ldots,\frac{\partial f}{\partial x_n}(a)\right).
+% \]
+% \end{definicion}
+% 
+% El vector gradiente en un punto dado tiene la misma magnitud y dirección que la velocidad máxima de variación de la
+% function en ese punto, por lo que $\nabla f(a)$ indica la dirección de máximo crecimiento de $f$ en el punto $a$,
+% mientras que $-\nabla f(a)$ indica la dirección de máximo decrecimiento.
+% 
+% Y a partir de las derivatives parciales de segundo orden, podemos definir the following matriz:
+% 
+% \begin{definicion}[Matriz hessiana]
+% Dada una function de varias variables $f(x_1,\ldots,x_n)$, para la que existen todas sus derivatives parciales de segundo
+% orden en un punto $a=(a_1,\ldots,a_n)$, se define la \emph{matriz hessiana} de $f$ en $a$, y se nota $\nabla^2f(a)$, como la
+% matriz cuadrada cuyos elementos son
+% \[
+% \nabla^2f(a)=\left(
+% \begin{array}{cccc}
+% \dfrac{\partial^2 f}{\partial x_1^2}(a) & 
+% \dfrac{\partial^2 f}{\partial x_1 \partial x_2}(a) &
+% \cdots &
+% \dfrac{\partial^2 f}{\partial x_1 \partial x_n}(a)\\
+% \dfrac{\partial^2 f}{\partial x_2 \partial x_1}(a) &
+% \dfrac{\partial^2 f}{\partial x_2^2}(a) & 
+% \cdots &
+% \dfrac{\partial^2 f}{\partial x_2 \partial x_n}(a)\\
+% \vdots & \vdots & \ddots & \vdots \\
+% \dfrac{\partial^2 f}{\partial x_n \partial x_1}(a) &
+% \dfrac{\partial^2 f}{\partial x_n \partial x_2}(a) &
+% \cdots &
+% \dfrac{\partial^2 f}{\partial x_n^2}(a)
+% \end{array}
+% \right).
+% \]
+% Al determinante de esta matriz se le llama \emph{hessiano} de $f$ en $a$, y se nota $Hf(a)=|\nabla^2f(a)|$.
+% \end{definicion}
+% 
+% Entre las utilidades de la matriz Hessiana y el hessiano está la determinación de los extremos relativos y los puntos de
+% silla de una function. 
+% 
+% \subsection{Derivada direccional}
+% Ya se ha visto que la derivatives parciales miden la tasa de variación instantánea de la function con respecto a cada uno
+% de sus variables, es decir, en la dirección de cada uno de los ejes de coordenadas. 
+% Pero, \emph {¿qué pasa si nos movemos en cualquier otra dirección?}
+% La tasa de variación instantánea de $f$ en un punto $a$ en la dirección de un vector unitario cualquiera $u$ se conoce
+% como \emph{derivative direccional}.
+% 
+% \begin{definicion}[Derivada direccional]
+% Dado un field escalar $f$ de $\mathbb{R}^n$, un punto $a$ y un vector unitario $\mathbf{u}$ en ese espacio, el límite
+% \[
+% f'_{\mathbf{u}}(a) = \lim_{h\rightarrow 0}\frac{f(a+h\mathbf{u})-f(a)}{h},
+% \] 
+% cuando existe, se llama \emph{derivative direccional} de $f$ en el punto $a$ en la dirección de $\mathbf{u}$.
+% \end{definicion}
+% Se cumple 
+% \[
+% f'_{\mathbf{u}}(a) =\nabla f(a)\cdot \mathbf{u}.
+% \]
+% Obsérvese que las derivatives parciales son las derivatives direccionales en las direcciones de los vectores coordenados.
+% 
+% \subsection{Derivación implícita}
+% Si se sabe que la ecuación 
+% \[
+% f(x,y)=0
+% \]
+% define a $y$ como function de $x$, $y=h(x)$, alrededor de cierto valor $x=x_0$ para el que $y=h(x_0)=y_0$, entonces, si se toma la trayectoria $g(x)=(x,h(x))$, la ecuación anterior se puede expresar como
+% \[
+% (f\circ g)(x) = f(g(x)) = f(x,h(x))=0,
+% \]
+% de modo que usando la regla de la cadena sobre se tiene
+% \[
+% (f\circ g)'(x) = \nabla f(g(x))\cdot g'(x) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)\cdot (1,h'(x)) = 
+% \frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}h'(x) = 0,
+% \] 
+% de donde se deduce
+% \[
+% y'=h'(x)=\frac{-\dfrac{\partial f}{\partial x}}{\dfrac{\partial f}{\partial y}}
+% \]
+% 
+% \subsection{Cálculo de extremos}
+% Si $a$ es un extremo de un field escalar $f$ de $\mathbb{R}^n$, entonces se cumple que $a$ es un punto crítico de $f$,
+% es decir,
+% \[
+% \nabla f(P) = 0,
+% \]
+% Sin embargo, no todos los puntos críticos son extremos relativos. 
+% Existen puntos como el de la figura~\ref{g:punto_silla} donde se anula el gradiente y que no son puntos de máximo, ni de
+% mínimo.
+% Estos puntos se conocen como \emph{puntos de silla}. 
+% \begin{figure}[htp]
+% \begin{center}
+% \scalebox{1}{\input{img/derivatives_varias_variables/punto_silla}}.
+% \caption{Gráfica de la function $f(x,y)=x^2-y^2$, que tiene un punto de silla en $(0,0)$. }
+% \label{g:punto_silla}
+% \end{center}
+% \end{figure}
+% 
+% Afortunadamente, es posible determinar si un punto crítico es un extremo relativo o un punto de silla a partir de la
+% matriz Hessiana y el hessiano. 
+% 
+% \begin{teorema}
+% Dado un punto crítico $a$ de un field escalar $f$ que tiene matríz hessiana $Hf(a)$, se cumple
+% \begin{itemize}
+% \item Si $\nabla^2f(a)$ es definido positivo entonces $f$ tiene un mínimo relativo en $a$.
+% \item Si $\nabla^2f(a)$ es definido negativo entonces $f$ tiene un máximo relativo en $a$.
+% \item Si $\nabla^2f(a)$ es indefinido entonces $f$ tiene un punto de silla en $a$.
+% \end{itemize}
+% \end{teorema}
+% En el caso de que $\nabla^2f(a)$ sea semidefinido, no se puede obtener ninguna conclusión y hay que recurrir a derivatives
+% parciales de orden superior.
+% 
+% En el caso particular de un field escalar de dos variables se tiene
+% \begin{teorema}
+% Dado un punto crítico $a=(x_0,y_0)$ de un field escalar $f(x,y)$ que tiene matríz hessiana $\nabla^2f(a)$, se cumple
+% \begin{itemize}
+% \item Si $Hf(a)>0$ y $\dfrac{\partial^2 f}{\partial x^2}(a)>0$ entonces $f$ tiene un mínimo relativo en $a$.
+% \item Si $Hf(a)>0$ y $\dfrac{\partial^2 f}{\partial x^2}(a)<0$ entonces $f$ tiene un máximo relativo en $a$.
+% \item Si $Hf(a)<0$ entonces $f$ tiene un punto de silla en $a$.
+% \end{itemize}
+% \end{teorema}
+% 
+% \newpage
+
+\section{Solved exercises}
+\begin{enumerate}[leftmargin=*]
+\item Compute the tangent line and the normal plane to the trajectory of
+\[
+f(t)=
+\begin{cases}
+x=\sin(t),\\
+y=\cos(t),\\
+z=\sqrt(t),
+\end{cases}
+\quad t\in \mathbb{R};
+\] 
+
+at the time $t=1$ and plot them.
+  
+\begin{indication}
+To plot the trajectory:
+\begin{enumerate}
+\item Define the function entering the expression \command{f(t):=[sin(t),cos(t),sqrt(t)]} in the Algebra window.
+\item Open a new graphic window with the menu \menu{Window > New 3D-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+To compute the tangent line and plot its graph:
+\begin{enumerate}
+\item Enter the expression \command{f(1)} in the Algebra window.
+\item Click the button \button{Plot} in the graphic window.
+\item Enter the expression \command{f(1)+tf'(1)} in the Algebra window and click the button \button{Simplify}.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+To compute the normal plane and plot its graph:
+\begin{enumerate}
+\item Enter the expression \command{([x,y,z]-f(1))f'(1)=0} in the Algebra window and click the button \button{Simplify}.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+\end{indication}  
+  
+\item Given the function $f(x,y)=y^2-x^2$,
+\begin{enumerate}
+\item Plot its graph.
+\begin{indication}
+\begin{enumerate}
+\item Enter the expression \command{f(x,y):=y\^{}2-x\^{}2} in the Algebra window.
+\item Open a new graphic window with the menu \menu{Window > New 3D-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+\end{indication}
+
+% \item Plot the level curves $f(x,y)=k$, for $k=1,\ldots,5$.
+% \begin{indication}
+% For each value of $k$:
+% \begin{enumerate}
+% \item Enter the expression \command{f(x,y)=k}.
+% \item Open a new graphic window with the menu \menu{Window > New 2D-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.
+% \item Click the button \button{Plot} in the graphic window.
+% \end{enumerate}
+% \end{indication}
+
+\item Plot the plane with equation $x=1$. 
+What shape has the curve that results from the intersection of this plane and the graph of $f$?
+\begin{indication}
+\begin{enumerate}
+\item Enter the expression \command{x=1} in the Algebra window.
+\item Click the button \button{Plot} in the 3D graphic window.
+\end{enumerate}
+\end{indication}
+
+\item Compute the derivative of $f(1,y)$ at $y=2$.
+\begin{indication}
+\begin{enumerate}
+\item Enter the expression \command{f(1,y)} in the Algebra window.
+\item Select the menu \menu{Calculus > Differentiate} or click the button \button{Find Derivative}.
+\item In the dialog shown click the button \button{Simplify}.
+\item Select the menu \menu{Simplify > Variable Substitution} or click the button \button{Variable Substitution}.
+\item In the dialog shown enter the value 2 in the field \field{New Value} and click the button \button{Simplify}.
+\end{enumerate}
+\end{indication}
+
+\item Plot the plane with equation $y=2$. 
+What shape has the curve that results from the intersection of this plane and the graph of $f$?
+\begin{indication}
+\begin{enumerate}
+\item Enter the expression \command{y=2} in the Algebra window.
+\item Click the button \button{Plot} in the 3D graphic window.
+\end{enumerate}
+\end{indication}
+
+\item Compute la derivative of $f(x,2)$ at $x=1$.
+\begin{indication}
+\begin{enumerate}
+\item Enter the expression \command{f(x,2)} in the Algebra window.
+\item Select the menu \menu{Calculus > Differentiate} or click the button \button{Find Derivative}.
+\item In the dialog shown click the button \button{Simplify}.
+\item Select the menu \menu{Simplify > Variable Substitution} or click the button \button{Variable Substitution}.
+\item In the dialog shown enter the value 1 in the field \field{New Value} and click the button \button{Simplify}.
+\end{enumerate}
+\end{indication}
+
+\item Compute the partial derivatives of $f$ at the point $(1,2)$. 
+What conclusions can you draw?
+\begin{indication}
+For the partial derivative of $f$ with respect to $x$:
+\begin{enumerate}
+\item Enter the expression \command{f(x,y)} or select the expression corresponding to $f$ in the Algebra window.
+\item Select the menu \menu{Calculus > Differentiate} or click the button \button{Find Derivative}.
+\item In the dialog shown select the variable \option{x} in the drop-down list and click the button \button{Simplify}.
+\item Select the menu \menu{Simplify > Variable Substitution} or click the button \button{Variable Substitution}.
+\item In the dialog shown select the variable \option{x} in the list \field{Variables} and enter the value 1 in the field \field{New Value}, then select the variable \option{y} in the list \field{Variables} and enter the value 2 in the field \field{New Value}, and click the button \button{Simplify}.
+\end{enumerate}
+A faster way of computing the partial derivative is entering the command \command{DIF(f(x,y),x)}
+
+For the partial derivative of $f$ with respect to $y$ repeat the previous steps but selecting the variable \option{y} in the drop-down list of the \menu{Calculus Differentiate} dialog.
+\end{indication}
+\end{enumerate}
+
+
+\item  Compute the following partial derivatives:
+\begin{enumerate}
+\item  $\dfrac{\partial }{\partial V}\dfrac{nRT}{V}.$
+
+\begin{indication}
+Enter the expression \command{DIF(nRT/V, V)} in the Algebra window and click the button \button{Simplify}.
+\end{indication}
+
+\item  $\dfrac{\partial ^{2}}{\partial x\partial y}e^{x+y}\sin(x/y).$
+\begin{indication}
+\begin{enumerate}
+Enter the expression \command{DIF(DIF(exp(x+y)sin(x/y), y), x)} in the Algebra window and click the button \button{Simplify}.
+\end{enumerate}
+\end{indication}
+\end{enumerate}
+
+\item Given the function $f(x,y)=20-4x^2-y^2$, compute at the point $(2,-3)$:
+\begin{enumerate}
+\item Gradient.
+\begin{indication}
+\begin{enumerate}
+\item Define the function entering the expression \command{f(x,y):=20-4x\^{}2-y\^{}2} in the Algebra window.
+\item Enter the expression \command{f'(2,-3)} in the Algebra window and click the button \button{Simplify}.
+\end{enumerate}
+\end{indication}
+
+\item Hessian matrix.
+\begin{indication}
+Enter the expression \command{f''(2,-3)} in the Algebra window and click the button \button{Simplify}.
+\end{indication}
+
+\item Hessian.
+\begin{indication}
+Enter the expression \command{DET(f''(2,-3))} in the Algebra window and click the button \button{Simplify}.
+\end{indication}
+\end{enumerate}
+% 
+% 
+% \item Dada la function
+% \[
+% f(x,y,z)=\sin((x^2-y^2)z)
+% \]
+% \begin{enumerate}
+% \item Definir la function.
+% \begin{indication}
+% Enter the expression \command{f(x,y,z):=sin((x\^{}2-y\^{}2)z)}.
+% \end{indication}
+% 
+% \item Compute su vector gradiente en el punto $(0,-1,\pi/2)$.
+% \begin{indication}
+% \begin{enumerate}
+% \item Enter the expression \command{f'(0,-1,pi/2)}.
+% \item Hacer clic sobre el button \button{Simplify}.
+% \end{enumerate}
+% \end{indication}
+% 
+% \item Compute su matriz Hessiana en el punto $(0,-1,\pi/2)$.
+% \begin{indication}
+% \begin{enumerate}
+% \item Enter the expression \command{f''(0,-1,pi/2)}.
+% \item Hacer clic sobre el button \button{Simplify}.
+% \end{enumerate}
+% \end{indication}
+% 
+% \item Comprobar que se cumple el teorema Schwartz de las derivatives para las derivas cruzadas:
+% \begin{enumerate}
+% \item $\dfrac{{\partial ^3 f}} {{\partial x\partial z\partial y}}$
+% \begin{indication}
+% \begin{enumerate}
+% \item Enter the expression \command{f(x,y,z)}.
+% \item Hacer clic sobre el button \button{Hallar una derivative}.
+% \item En el cuadro de diálogo que aparece seleccionar la variable $y$ y click the button \button{Simplify}.
+% \item Repetir el proceso con la expresión resultante, seleccionando esta vez la variables $z$.
+% \item Repetir una vez más el proceso con la expresión resultante, seleccionando esta vez la variables $x$.
+% \end{enumerate}
+% \end{indication}
+% 
+% \item $\dfrac{{\partial ^3 f}} {{\partial z\partial x\partial y}}$
+% \begin{indication}
+% \begin{enumerate}
+% \item Enter the expression \command{f(x,y,z)}.
+% \item Hacer clic sobre el button \button{Hallar una derivative}.
+% \item En el cuadro de diálogo que aparece seleccionar la variable $y$ y click the button \button{Simplify}.
+% \item Repetir el proceso con la expresión resultante, seleccionando esta vez la variables $x$.
+% \item Repetir una vez más el proceso con la expresión resultante, seleccionando esta vez la variables $z$.
+% \end{enumerate}
+% \end{indication}
+% \end{enumerate}
+% 
+% ¿Puedes predecir el valor de $\dfrac{{\partial ^3 f}} {{\partial y\partial x\partial z}}$?
+% \end{enumerate}
+% 
+\item Compute the normal line and the tangent plane to the surface $S: x+2y-\log z +4 =0$ at the point $(0,-2,1)$ and plot them.
+\begin{indication}
+To plot the surface:
+\begin{enumerate}
+\item Define the function entering the expression \command{f(x,y,z):=x+2y-log(z)+4} in the Algebra window.
+\item Enter the expression \command{f(x,y,z)=0} in the Algebra window.
+\item Select the menu \menu{Solve > Expression}.
+\item In the dialog shown select the variable \option{z} in the list \field{Solution Variables}, check the option \option{Real} in the field \field{Solution Domain} and click the button \button{Solve}.
+\item Open a new graphic window with the menu \menu{Window > New 3D-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+To compute normal line and plot its graph:
+\begin{enumerate}[resume]
+\item Enter the expression \command{[0,-2,1]+tf'(0,-2,1)} and click the button \button{Simplify}.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+To compute the tangent plane and plot its graph:
+\begin{enumerate}[resume]
+\item Enter the expression \command{([x,y,z]-[0,-2,1])f'(0,-2,1)=0} in the Algebra window and click the button \button{Simplify}.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+\end{indication}
+% 
+% \item La ecuación $x+y-2e^y+2=0$ define implícitamente una function $y=f(x)$ alrededor del punto $(0,0)$. Compute
+% $f'(0)$.
+% \begin{indication}
+% \begin{enumerate}
+% \item Enter the expression \command{x+y-2\#e\^{}y+2}.
+% \item Hacer clic sobre el button \button{Hallar una derivative}.
+% \item En el cuadro de diálogo que aparece seleccionar la variable $x$ y click the button \button{Simplify}. 
+% \item Seleccionar de nuevo la expresión inicial.
+% \item Hacer clic sobre el button \button{Hallar una derivative}.
+% \item En el cuadro de diálogo que aparece seleccionar la variable $y$ y click the button \button{Simplify}.
+% \item Enter the expression \command{-\#i/\#j} donde \command{\#i} es la etiqueta de la expresión de la derivative
+% parcial con respecto a $x$ y \command{\#j} es la etiqueta de la expresión de la derivative parcial con respecto a $y$.
+% \item Hacer clic sobre el button \button{Sustituir}.
+% \item En el cuadro de diálogo que aparece, seleccionar $x$ e introducir el valor $0$, seleccionar $y$ e
+% introducir el valor $0$, y click the button \button{Simplify}.
+% \end{enumerate}
+% \end{indication}
+% 
+\item Compute directional derivative of the function $h(x,y)= 3x^2+y$ at the point $(0,0)$, along the vector $(1,1)$.
+\begin{indication}
+\begin{enumerate}
+\item Define the function entering the expression \command{h(x,y):=3x\^{}2+y} in the Algebra window.
+\item Enter the expression \command{h'(0,0)SIGN([1,1])} in the Algebra window and click the button \button{Simplify}.
+\end{enumerate}
+\end{indication}
+
+\item Given the function $f(x,y)=x^3+y^3-3xy$:
+\begin{enumerate}
+\item Plot its graph. 
+Looking at the graph, can you determine the relative extrema of $f$?
+\begin{indication}
+\begin{enumerate}
+\item Define the function entering the expression \command{f(x,y):=x\^{}3+y\^{}3-3xy}.
+\item Open a new graphic window with the menu \menu{Window > New 3D-plot Window} and select the menu \menu{Window -> Tile Vertically} to see the Algebra and the graphic windows at the same time.
+\item Click the button \button{Plot} in the graphic window.
+\end{enumerate}
+\end{indication}
+
+\item Compute critical points of $f$.
+\begin{indication}
+The critical points are the points that make zero the gradient. 
+\begin{enumerate}
+\item Enter the expression \command{f'(x,y)=0} in the Algebra window.
+\item Select the menu \menu{Solve > Expression}.
+\item In the dialog shown select the variables \option{x} and \option{y} in the list \field{Solution Variables}, check the option \option{Real} in the field \field{Solution Domain} and click the button \button{Solve}.
+\end{enumerate}
+\end{indication}
+
+\item Determine the relative extrema and the saddle points of $f$.
+\begin{indication}
+For each critical point $(a,b)$ you have to compute the Hessian matrix and the Hessian:
+\begin{enumerate}
+\item Enter the expression \command{f''(a,b)} in the Algebra window and click the button \button{Simplify}.
+\item Enter the expression \command{DET(f''(a,b))} in the Algebra window and click the  button \button{Simplify}.
+\end{enumerate}
+If the Hessian is positive and the second partial derivative of $f$ with respect to $x$ two times is positive the function has a relative minimum at the critical point.
+If the Hessian is positive and the second partial derivative of $f$ with respect to $x$ two times is negative the function has a relative maximum at the critical point.
+If the Hessian is negative the function has a saddle point at the critical point.
+\end{indication}
+\end{enumerate}
+
+\end{enumerate}
+
+
+\section{Proposed exercises}
+\begin{enumerate}[leftmargin=*]
+\item A spaceship, traveling near the sun, is in trouble.
+The temperature at position $(x,y,z)$ is given by 
+\[T(x,y,z)=\mbox{e}^{-x^2-2y^2-3z^2},\]
+where the variables are measured
+in thousands of kilometers, and we assume the sun is at position $(0,0,0)$.
+If the ship is at position $(1,1,1)$, find the direction in which it should move so that the temperature will decrease as fast as possible.
+
+\item Compute the gradient, the Hessian matrix and the Hessian of the function
+\[
+g(x,y,z) = \frac{x}{\sqrt{x^2+y^2+z^2}^3}
+\]
+at the point $(1,1,1)$ and at the point $(0,3,4)$.
+
+\item Determine the points of the ellipsoid $S: x^2+2y^2+z^2=1$ where the tangent plane is parallel to the plane $\Pi:
+x-y+2z^2=0$.
+
+\item Determine the relative extrema of the function 
+\[
+f(x)=-\frac{y}{9+x^2+y^2}.
+\]
+
+\item Compute the directional derivative of the scalar field $f(x,y,z)=x^2-y^2+xyz^3-zx$ at the point $(1,2,3)$ along the vector $(1,-1,0)$.
+\end{enumerate}
