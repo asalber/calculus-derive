@@ -1,3 +1,4 @@
+% !TEX program = xelatex
 % Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 %----------------------------------------------------------------------------------------
 %    DOCUMENT CLASS
@@ -16,7 +17,7 @@
 \usepackage[top=3cm, bottom=3cm, left=2.54cm, right=2.54cm]{geometry}
 
 % Font settings
-\usepackage{mathpazo} 
+\usepackage{mathpazo}
 \usepackage{fontspec}
 \setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
 %\usepackage{unicode-math}
@@ -37,15 +38,15 @@
 \definecolor{chaptergrey}{RGB}{5,161,230} % Blue color of CEU logo
 
 % Math support
-\usepackage{amsmath} 
+\usepackage{amsmath}
 
 % Line breaking
-\usepackage{microtype} 
+\usepackage{microtype}
 \setlength{\emergencystretch}{2em}
 
 % Graphics
 \usepackage{graphicx}
-\usepackage{tikz} 
+\usepackage{tikz}
 \usepackage{eso-pic} % Required for specifying an image background in the title page
 
 % Arrays and tables
@@ -76,7 +77,7 @@
 
 \renewcommand{\theenumiii}{\arabic{enumiii}}
 
-% Flush floating 
+% Flush floating
 \usepackage{afterpage}
 
 % Creative common icons
@@ -104,7 +105,7 @@ urlcolor = magenta,          % color of external links
 
 % Control of widow orphan lines
 \clubpenalty=10000
-\widowpenalty=10000 
+\widowpenalty=10000
 
 %Code listing formatting
 \usepackage{listings}
@@ -148,16 +149,16 @@ urlcolor = magenta,          % color of external links
 %   DOCUMENT BODY
 %========================================================================================
 \begin{document}
-\frontmatter 
+\frontmatter
 % Add two blank pages at the begining
 %\null\thispagestyle{empty}\newpage
 %\null\thispagestyle{empty}\newpage
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
-\input{preamble/titlepage} 
-%\input{preamble/titlepage_book} 
- 
+\input{preamble/titlepage}
+%\input{preamble/titlepage_book}
+
 %----------------------------------------------------------------------------------------
 %	COPYRIGHT PAGE
 %----------------------------------------------------------------------------------------
@@ -174,9 +175,9 @@ urlcolor = magenta,          % color of external links
 \cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
 }
 
-\mainmatter 
+\mainmatter
 %----------------------------------------------------------------------------------------
-%	CHAPTERS 
+%	CHAPTERS
 %----------------------------------------------------------------------------------------
 \input{chapters/introduction}
 \input{chapters/elementary_functions}
@@ -187,5 +188,5 @@ urlcolor = magenta,          % color of external links
 \input{chapters/ordinary_differential_equations}
 \input{chapters/derivatives_n_variables}
 
-% \appendix 
+% \appendix
 \end{document}
